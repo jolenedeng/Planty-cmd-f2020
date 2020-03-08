@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { GardenComponent } from './garden/garden.component';
+import { PlantCardComponent } from './plant-card/plant-card.component';
+import { PlantDetailsComponent } from './plant-details/plant-details.component';
+import { RecommendationComponent } from './recommendation/recommendation.component';
 
 @NgModule({
   imports: [
@@ -20,7 +23,9 @@ import { GardenComponent } from './garden/garden.component';
     HomeComponent,
     FavoritesComponent,
     GardenComponent,
-    HomeComponent
+    PlantCardComponent,
+    PlantDetailsComponent,
+    RecommendationComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
