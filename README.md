@@ -1,1 +1,4 @@
-# Planty ![planty](https://user-images.githubusercontent.com/32408688/76169366-a86b0100-6134-11ea-9d3c-474325e74efc.png)
+
+# Planty
+
+![planty-logo](https://user-images.githubusercontent.com/32408688/76169469-bc633280-6135-11ea-9ee7-4daad3091eb9.png)
