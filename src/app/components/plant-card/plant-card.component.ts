@@ -27,7 +27,7 @@ export class PlantCardComponent implements OnInit {
       );
     } else {
       // Retrieve images from google api if we don't have them
-      this.plantImageSrc$ = this._plantImageSerivce.getPlantImageForPlant(plant.commonName, plant).pipe(
+      this.plantImageSrc$ = this._plantImageService.getPlantImageForPlant(plant.commonName, plant).pipe(
         map((images: string[]) => images[0])
       );
     }
