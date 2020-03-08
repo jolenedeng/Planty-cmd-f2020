@@ -1,8 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PlantImageService } from 'src/app/services/plant-image.service';
 import { Plant } from 'src/app/plant';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Router } from '@angular/router';
+import { map } from "rxjs/operators"
+import { isPresent } from 'src/app/commonFunctions';
 
 @Component({
   selector: 'app-plant-card',
@@ -18,7 +20,17 @@ export class PlantCardComponent implements OnInit {
    */
   @Input() public set plant(plant: Plant) {
     this._plant = plant;
-    this.plantImageSrc$ = this._plantImageSerivce.getPlantImage(plant.commonName);
+    // Retrieve images from stored data if we already queried them
+    if (isPresent(plant.imageUrls)) {
+      this.plantImageSrc$ = of(plant.imageUrls).pipe(
+        map((images: string[]) => images[0])
+      );
+    } else {
+      // Retrieve images from google api if we don't have them
+      this.plantImageSrc$ = this._plantImageSerivce.getPlantImageForPlant(plant.commonName, plant).pipe(
+        map((images: string[]) => images[0])
+      );
+    }
   }
 
   private _plant: Plant;
