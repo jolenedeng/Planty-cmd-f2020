@@ -2,3 +2,7 @@
     width: 20rem;
     margin: 1rem;
 }
+
+.card-title {
+    font-weight: bold;
+}

@@ -8,10 +8,13 @@
         </p>
     </div>
     <div class="search-container">
-        Insert search component
-        <button (click)="findUser()">Find me</button>
-        <span>{{"I'm currently at: " + getCurrentState}}</span>
-        <button (click)="getPlants()">get plants</button>
+        <div class="search-box">
+            <div>
+                <button *ngIf="!currentState" class="btn btn-outline" (click)="findUser()">Find my location</button>
+            </div>
+            <span class="current-state" *ngIf="currentState">{{"I'm currently at: " + getCurrentState}}</span>
+            <button class="btn btn-primary" (click)="getPlants()">Find plants</button>
+        </div>
     </div>
     <div class="plant-cards-container" *ngIf="plants$ | async as plants">
         <div class="plant-card" *ngFor="let plant of plants">
