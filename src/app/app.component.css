@@ -13,4 +13,6 @@
 }
 
 .logo-container {
+  background-image: url("planty.png");
+  background-size: 0;
 }
