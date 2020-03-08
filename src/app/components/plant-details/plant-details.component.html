@@ -1,32 +1,43 @@
 <div class="clarity-wrapper container" *ngIf="plant$ | async as plant">
     <div class="plant-header">
-        <button class="btn btn-icon" routerLink="../recommendation"><clr-icon shape="undo"></clr-icon></button> {{plant.commonName}}
+        <button class="btn btn-icon" routerLink="../recommendation"><clr-icon shape="undo"></clr-icon></button> {{plant.commonName}} 🌱
     </div>
     <div class="plant-details-container">
         <div class="image-container">
-            <img src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            <!-- <img [src]="plant.imageUrls[0]"> -->
+            <img class="main-image" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            <div class="image-menu-selector">
+                <!-- <div *ngFor="let imageUrl of plant.imageUrls">
+                    <img *ngFor="let imageUrl of plant.imageUrls" [src]="imageUrl">
+                </div> -->
+                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            </div>
         </div>
-        <div class="details-container">
-            <div class="plant-body">
-                <div class="plant-detail scientific-name">
-                    <span><clr-icon shape="dna"></clr-icon> Scientific name: </span><span>{{plant.scientificName}}</span>
+        <div class="details-container ">
+            <div class="plant-body ">
+                <div class="plant-detail scientific-name ">
+                    <span><clr-icon shape="dna "></clr-icon> Scientific name: </span><span>{{plant.scientificName}}</span>
                 </div>
-                <div class="plant-detail shade-tolerance" *ngIf="plant.shadeTolerance">
-                    <span><clr-icon shape="sun"></clr-icon> Shade tolerance: </span><span>{{plant.shadeTolerance}}</span>
+                <div class="plant-detail shade-tolerance " *ngIf="plant.shadeTolerance ">
+                    <span><clr-icon shape="sun "></clr-icon> Shade tolerance: </span><span>{{plant.shadeTolerance}}</span>
                 </div>
-                <div class="plant-detail moisture-use" *ngIf="plant.moistureUse">
-                    <span><clr-icon shape="cloud"></clr-icon> Moisture Use: </span><span>{{plant.moistureUse}}</span>
+                <div class="plant-detail moisture-use " *ngIf="plant.moistureUse ">
+                    <span><clr-icon shape="cloud "></clr-icon> Moisture Use: </span><span>{{plant.moistureUse}}</span>
                 </div>
-                <div class="plant-detail min-temp" *ngIf="plant.temperatureMin">
-                    <span><clr-icon shape="snowflake"></clr-icon> Minimum temperature: </span><span>{{plant.temperatureMin}}°C</span>
+                <div class="plant-detail min-temp " *ngIf="plant.temperatureMin ">
+                    <span><clr-icon shape="snowflake "></clr-icon> Minimum temperature: </span><span>{{plant.temperatureMin}}°C</span>
                 </div>
-                <div class="plant-detail adaptable-soil-types" *ngIf="hasAdaptableSoilTypes(plant)">
+                <div class="plant-detail adaptable-soil-types " *ngIf="hasAdaptableSoilTypes(plant) ">
                     <span>Adaptable soil types: </span>
-                    <span class="label" *ngIf="plant.isAdaptedToCoarseSoil">Coarse Soil</span>
-                    <span class="label" *ngIf="plant.isAdaptedToMediumSoil">Medium Soil</span>
-                    <span class="label" *ngIf="plant.isAdaptedToFineSoil">Fine Soil</span>
+                    <span class="label " *ngIf="plant.isAdaptedToCoarseSoil ">Coarse Soil</span>
+                    <span class="label " *ngIf="plant.isAdaptedToMediumSoil ">Medium Soil</span>
+                    <span class="label " *ngIf="plant.isAdaptedToFineSoil ">Fine Soil</span>
                 </div>
-                <div class="plant-detail min-temp" *ngIf="plant.precipitationMin && plant.precipitationMax">
+                <div class="plant-detail min-temp " *ngIf="plant.precipitationMin && plant.precipitationMax ">
                     <span>Precipitation range: </span><span>{{plant.precipitationMin}}mm to {{plant.precipitationMax}}mm</span>
                 </div>
             </div>

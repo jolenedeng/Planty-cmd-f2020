@@ -36,8 +36,6 @@
 
 .search-box {
     padding: 1rem;
-    background-color: #fae3ed;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
