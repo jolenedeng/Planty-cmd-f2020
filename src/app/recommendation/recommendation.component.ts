@@ -4,8 +4,9 @@ import {LocationService} from './location.service';
 
 
 @Component({
-    selector: "recommendation",
-    templateUrl: "./recommendation.component.ng.html"
+    selector: 'recommendation',
+    templateUrl: './recommendation.component.ng.html',
+    styleUrls: ['./recommendation.component.css']
 })
 /**
  * Container for recommendation page.
