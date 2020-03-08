@@ -41,7 +41,7 @@ export class PlantCardComponent implements OnInit {
 
   public plantImageSrc$: Observable<string>;
 
-  constructor(private _plantImageSerivce: PlantImageService,
+  constructor(private _plantImageService: PlantImageService,
     private _router: Router) { }
 
   ngOnInit(): void {
