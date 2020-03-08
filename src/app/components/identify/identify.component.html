@@ -1,0 +1,20 @@
+<div class="clarity-wrapper recommendation-container">
+  <div class="recommendation-header">
+    <p class="recommendation-header-text">
+      Identify Plant
+    </p>
+    <p class="recommendation-description">
+      Upload a plant and we'll tell you what it is!
+    </p>
+  </div>
+  <div class="upload-container">
+    <label *ngIf="!getImageUrl" class="image-upload-container btn btn-outline">
+      <clr-icon shape="upload"></clr-icon>
+      <span>Upload Image</span>
+      <input #imageInput type="file" (change)="processFile($event)">
+    </label>
+    <div *ngIf="getImageUrl" class="image-display-container">
+      <img [src]="getImageUrl">
+    </div>
+  </div>
+</div>

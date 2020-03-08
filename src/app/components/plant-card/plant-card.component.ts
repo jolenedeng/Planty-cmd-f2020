@@ -18,7 +18,7 @@ export class PlantCardComponent implements OnInit {
    */
   @Input() public set plant(plant: Plant) {
     this._plant = plant;
-    this.plantImageSrc$ = this._plantImageSerivce.getPlantImage(plant.commonName);
+    //this.plantImageSrc$ = this._plantImageService.getPlantImage(plant.commonName);
   }
 
   private _plant: Plant;
@@ -29,7 +29,7 @@ export class PlantCardComponent implements OnInit {
 
   public plantImageSrc$: Observable<string>;
 
-  constructor(private _plantImageSerivce: PlantImageService,
+  constructor(private _plantImageService: PlantImageService,
     private _router: Router) { }
 
   ngOnInit(): void {

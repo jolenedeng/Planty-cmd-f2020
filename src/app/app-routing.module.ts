@@ -6,6 +6,7 @@ import { RecommendationComponent } from './components/recommendation/recommendat
 import { GardenComponent } from './components/garden/garden.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { PlantDetailsComponent } from './components/plant-details/plant-details.component';
+import {IdentifyComponent} from './components/identify/identify.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'favorites',
     component: FavoritesComponent
+  },
+  {
+    path: 'identify',
+    component: IdentifyComponent
   },
   {
     path: ':id',
