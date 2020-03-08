@@ -17,10 +17,18 @@ import { tap } from "rxjs/operators"
  */
 export class RecommendationComponent {
   public plants$: Observable<Plant[]>;
+
+  public savedPlants: Plant[];
+
   public currentState: string;
 
   constructor(private locationService: LocationService,
               private plantService: USDAPlantApiService) {
+        const savedLocation: string = localStorage.getItem("location");
+        if (savedLocation !== undefined) {
+          this.currentState = savedLocation;
+          this.getPlants();
+        }
   }
 
   public get getCurrentState(): string {
@@ -41,6 +49,7 @@ export class RecommendationComponent {
         });
         if (found) {
           this.currentState = found.short_name;
+          localStorage.setItem("location", this.currentState);
         }
       }
     });
@@ -48,7 +57,7 @@ export class RecommendationComponent {
 
   public getPlants(): void {
     this.plants$ = this.plantService.getNativePlants(this.currentState).pipe(
-      tap((plants: Plant[]) => console.log(plants))
+      tap((plants: Plant[]) => this.savedPlants = plants)
     );
   }
 }
