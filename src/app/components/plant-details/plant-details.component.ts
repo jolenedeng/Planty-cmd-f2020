@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Plant } from 'src/app/plant';
 import {map} from "rxjs/operators";
 import { Observable } from 'rxjs';
+import { isPresent } from 'src/app/commonFunctions';
 
 @Component({
   selector: 'app-plant-details',
@@ -25,4 +26,7 @@ export class PlantDetailsComponent implements OnInit {
     )
   }
 
+  public hasAdaptableSoilTypes(plant: Plant): boolean {
+    return isPresent(plant.isAdaptedToCoarseSoil) || isPresent(plant.isAdaptedToFineSoil) || isPresent(plant.isAdaptedToMediumSoil);
+  }
 }

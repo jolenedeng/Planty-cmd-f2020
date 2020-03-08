@@ -9,8 +9,9 @@
 .home-title {
     font-size: 50px;
     padding-bottom: 2rem;
-    font-weight: 900;
+    font-weight: bold;
     color: black;
+    font-family: 'Montserrat', serif;
 }
 
 .home-description {

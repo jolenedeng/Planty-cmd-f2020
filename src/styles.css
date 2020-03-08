@@ -14,10 +14,23 @@ button.btn.btn-primary:hover {
 
 button.btn.btn-outline {
     color: #e67c8c;
+    background-color: white;
     border-color: #e67c8c
 }
 
 button.btn.btn-outline:hover {
+    color: white;
+    border-color: #e67c8c;
+    background-color: #f5a9b5;
+}
+
+button.btn.btn-icon {
+    color: #e67c8c;
+    background-color: white;
+    border-color: #e67c8c
+}
+
+button.btn.btn-icon:hover {
     color: white;
     border-color: #e67c8c;
     background-color: #f5a9b5;

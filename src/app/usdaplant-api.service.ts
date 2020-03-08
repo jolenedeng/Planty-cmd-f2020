@@ -36,15 +36,15 @@ export class USDAPlantApiService {
       }))
     );
 
-    this.plants.subscribe(plants => console.log(plants));
     // filter based on location and return the first 3 results
- 
+
     return this.plants.pipe(
       map(plants => plants.filter(plant => this.isLocationValid(location, plant.provinceState))
         .slice(0, 40)),
       tap((plants: Plant[]) => {
         plants.forEach((plant: Plant) => localStorage.setItem(plant.scientificName, JSON.stringify(plant)));
-      })
+      }),
+      map((plants: Plant[]) => plants)
     );
   }
 

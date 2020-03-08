@@ -1,16 +1,18 @@
-<div class="clarity-wrapper">
+<div class="clarity-wrapper plant-card-container">
     <div class="card" *ngIf="plant">
         <div class="card-img">
             <img [src]="plantImageSrc$ | async">
         </div>
         <div class="card-block">
             <h4 class="card-title">{{plant.commonName}}</h4>
-            <p class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, aut. Nihil nemo, necessitatibus earum.
-            </p>
+            <div class="card-text">
+                <div class="plant-detail scientific-name">
+                    <span><clr-icon shape="dna"></clr-icon> Scientific name: </span><span>{{plant.scientificName}}</span>
+                </div>
+            </div>
         </div>
         <div class="card-footer">
-            <a class="btn btn-sm btn-link">View details</a>
+            <button class="btn btn-sm btn-link" (click)="navigateToDetails()">View details</button>
         </div>
     </div>
 </div>

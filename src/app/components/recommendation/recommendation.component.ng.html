@@ -9,11 +9,16 @@
     </div>
     <div class="search-container">
         <div class="search-box">
-            <div>
-                <button *ngIf="!currentState" class="btn btn-outline" (click)="findUser()">Find my location</button>
+            <div class="no-plant-results" *ngIf="!(plants$ | async)">
+                <div>
+                    <button *ngIf="!currentState" class="btn btn-outline" (click)="findUser()">Find my location</button>
+                </div>
+                <div class="current-state" *ngIf="currentState">{{"Find plants native to " + getCurrentState}}</div>
+                <button *ngIf="currentState" class="btn btn-icon search-button" (click)="getPlants()"><clr-icon shape="search"></clr-icon></button>
             </div>
-            <span class="current-state" *ngIf="currentState">{{"I'm currently at: " + getCurrentState}}</span>
-            <button class="btn btn-primary" (click)="getPlants()">Find plants</button>
+            <div *ngIf="plants$ | async as plants">
+                <div class="current-state" *ngIf="currentState">{{"Showing plants native to " + getCurrentState}}</div>
+            </div>
         </div>
     </div>
     <div class="plant-cards-container" *ngIf="plants$ | async as plants">

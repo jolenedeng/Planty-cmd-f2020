@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { PlantImageService } from 'src/app/services/plant-image.service';
 import { Plant } from 'src/app/plant';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-plant-card',
@@ -17,7 +18,7 @@ export class PlantCardComponent implements OnInit {
    */
   @Input() public set plant(plant: Plant) {
     this._plant = plant;
-    this.plantImageSrc$ = this._plantImageSerivce.getPlantImage(plant.commonName);
+    // this.plantImageSrc$ = this._plantImageSerivce.getPlantImage(plant.commonName);
   }
 
   private _plant: Plant;
@@ -28,9 +29,13 @@ export class PlantCardComponent implements OnInit {
 
   public plantImageSrc$: Observable<string>;
 
-  constructor(private _plantImageSerivce: PlantImageService) { }
+  constructor(private _plantImageSerivce: PlantImageService,
+    private _router: Router) { }
 
   ngOnInit(): void {
   }
 
+  public navigateToDetails(): void {
+    this._router.navigate([this.plant.scientificName]);
+  }
 }

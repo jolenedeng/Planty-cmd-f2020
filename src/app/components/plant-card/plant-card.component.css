@@ -1,8 +1,8 @@
-:host {
-    width: 20rem;
-    margin: 1rem;
-}
-
-.card-title {
-    font-weight: bold;
-}
+    .plant-card-container {
+        width: 30rem;
+        padding: 1rem;
+    }
+    
+    .card-title {
+        font-weight: bold;
+    }
