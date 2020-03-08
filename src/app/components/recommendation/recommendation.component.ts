@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import {} from "googlemaps";
 import { LocationService } from 'src/app/services/location.service';
+import { StatesLibrary } from 'src/app/services/statesLibrary';
 
 @Component({
     selector: 'recommendation',
@@ -12,7 +13,14 @@ import { LocationService } from 'src/app/services/location.service';
  */
 export class RecommendationComponent {
 
-  constructor(private locationService: LocationService) {}
+  private currentState: string;
+
+  constructor(private locationService: LocationService) {
+  }
+
+  public get getCurrentState(): string {
+    return (this.currentState) ? this.currentState: "unknown location";
+  }
 
   public findUser(): void {
     navigator.geolocation?.getCurrentPosition(((position: Position) => {
@@ -20,8 +28,16 @@ export class RecommendationComponent {
     }));
   }
   public showCurrentLocation(position: Position): void {
-    console.log("my location is " + position.coords.latitude + " " + position.coords.longitude);
-    this.locationService.getStateFromLatlng(position.coords.latitude, position.coords.longitude);
+    this.locationService.getStateFromLatlng(position.coords.latitude, position.coords.longitude).subscribe((res: any) => {
+      if (res.status === "OK" && res.results.length > 0) {
+        const found = res.results[0].address_components?.find((address) => {
+          return Array.from(StatesLibrary.STATES.values()).indexOf(address.long_name) !== -1;
+        });
+        if (found) {
+          this.currentState = found.short_name;
+        }
+      }
+    });
   }
 
 }
