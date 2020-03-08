@@ -7,14 +7,12 @@ import {API_KEY} from '../../../.secret';
   providedIn: 'root'
 })
 export class LocationService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-  public getStateFromLatlng(lat: number, lng: number): Observable<string> {
-    this.http.request("GET", "https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key="+API_KEY)
-      .subscribe((obj) => {
-        console.log(obj);
-      });
-    return of("");
+  public getStateFromLatlng(lat: number, lng: number): Observable<any> {
+    const url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&key="+API_KEY;
+    return this.http.request("GET", url);
   }
 
 }
