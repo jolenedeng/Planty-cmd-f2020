@@ -1,0 +1,11 @@
+.image-upload-container input {
+  display: none;
+}
+
+.upload-container {
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
