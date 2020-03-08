@@ -27,9 +27,9 @@
                 </div>
                 <div class="plant-detail adaptable-soil-types " *ngIf="hasAdaptableSoilTypes(plant) ">
                     <span>Adaptable soil types: </span>
-                    <span class="label " *ngIf="plant.isAdaptedToCoarseSoil ">Coarse Soil</span>
-                    <span class="label " *ngIf="plant.isAdaptedToMediumSoil ">Medium Soil</span>
-                    <span class="label " *ngIf="plant.isAdaptedToFineSoil ">Fine Soil</span>
+                    <span class="label label-light-blue" *ngIf="plant.isAdaptedToCoarseSoil ">Coarse Soil</span>
+                    <span class="label label-blue" *ngIf="plant.isAdaptedToMediumSoil ">Medium Soil</span>
+                    <span class="label label-purple" *ngIf="plant.isAdaptedToFineSoil ">Fine Soil</span>
                 </div>
                 <div class="plant-detail min-temp " *ngIf="plant.precipitationMin && plant.precipitationMax ">
                     <span>Precipitation range: </span><span>{{plant.precipitationMin}}mm to {{plant.precipitationMax}}mm</span>
