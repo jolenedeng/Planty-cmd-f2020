@@ -19,4 +19,5 @@ export interface Plant {
     precipitationMax: string;
     shadeTolerance: string;
     temperatureMin: string;
+    imageUrls?: string[];
 }

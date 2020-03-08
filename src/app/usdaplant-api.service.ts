@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Plant } from './plant';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, switchMap } from 'rxjs/operators';
+import { PlantImageService } from './services/plant-image.service';
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +41,7 @@ export class USDAPlantApiService {
 
     return this.plants.pipe(
       map(plants => plants.filter(plant => this.isLocationValid(location, plant.provinceState))
-        .slice(0, 40)),
+        .slice(0, 2)),
       tap((plants: Plant[]) => {
         plants.forEach((plant: Plant) => localStorage.setItem(plant.scientificName, JSON.stringify(plant)));
       }),

@@ -9,14 +9,30 @@
 
 .image-container {
     flex-grow: 1;
+    display: flex;
 }
 
-img {
+.image-menu-selector {
+    width: 8rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img.main-image {
     width: 30rem;
     height: 30rem;
     object-fit: cover;
     margin-left: 2rem;
-    border-radius: 50%;
+}
+
+img.image-icon {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .details-container {
