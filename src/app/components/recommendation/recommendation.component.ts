@@ -25,7 +25,7 @@ export class RecommendationComponent {
   constructor(private locationService: LocationService,
               private plantService: USDAPlantApiService) {
         const savedLocation: string = localStorage.getItem("location");
-        if (savedLocation !== undefined) {
+        if (savedLocation) {
           this.currentState = savedLocation;
           this.getPlants();
         }
