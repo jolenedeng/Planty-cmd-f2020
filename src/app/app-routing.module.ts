@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { FavoritesComponent } from './favorites/favorites.component';
-import { GardenComponent } from './garden/garden.component';
-import { RecommendationComponent } from './recommendation/recommendation.component';
+import { HomeComponent } from './components/home/home.component';
+import { RecommendationComponent } from './components/recommendation/recommendation.component';
+import { GardenComponent } from './components/garden/garden.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { PlantDetailsComponent } from './components/plant-details/plant-details.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'favorites',
     component: FavoritesComponent
+  },
+  {
+    path: ':id',
+    component: PlantDetailsComponent
   },
   {
     path: '',

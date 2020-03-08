@@ -1,0 +1,34 @@
+.plant-details-container {
+    display: flex;
+}
+
+.image-container {
+    flex-grow: 1
+}
+
+.details-container {
+    flex-grow: 1;
+}
+
+.plant-header {
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 2rem;
+    color: black;
+}
+
+.plant-body {
+    padding: 1rem;
+}
+
+.plant-detail {
+    font-size: 25px;
+    color: black;
+    font-weight: lighter;
+    padding-bottom: 1rem;
+}
+
+clr-icon {
+    width: 30px;
+    height: 30px;
+}
