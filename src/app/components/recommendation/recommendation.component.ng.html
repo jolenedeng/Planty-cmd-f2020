@@ -9,15 +9,13 @@
     </div>
     <div class="search-container">
         Insert search component
-      <button (click)="findUser()">Find me</button>
-      <span>{{"I'm currently at: " + getCurrentState}}</span>
+        <button (click)="findUser()">Find me</button>
+        <span>{{"I'm currently at: " + getCurrentState}}</span>
+        <button (click)="getPlants()">get plants</button>
     </div>
-    <div class="plant-cards-container">
-        <!-- <div class="plant-card" *ngFor="let plant of plants">
+    <div class="plant-cards-container" *ngIf="plants$ | async as plants">
+        <div class="plant-card" *ngFor="let plant of plants">
             <app-plant-card [plant]=plant></app-plant-card>
-        </div> -->
-        <app-plant-card></app-plant-card>
-        <app-plant-card></app-plant-card>
-        <app-plant-card></app-plant-card>
+        </div>
     </div>
 </div>
