@@ -17,7 +17,7 @@ import { tap } from "rxjs/operators"
  */
 export class RecommendationComponent {
   public plants$: Observable<Plant[]>;
-  private currentState: string;
+  public currentState: string;
 
   constructor(private locationService: LocationService,
               private plantService: USDAPlantApiService) {

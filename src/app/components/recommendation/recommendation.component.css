@@ -27,3 +27,17 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.search-container {
+    padding: 2rem;
+}
+
+.search-box {
+    padding: 1rem;
+    background-color: #fae3ed;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
