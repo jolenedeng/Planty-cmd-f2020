@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+button.btn.btn-primary {
+    background-color: #e67c8c;
+    border-color: #e67c8c;
+    color: white;
+}
+
+button.btn.btn-primary:hover {
+    background-color: #d95f72;
+    border-color: #d95f72;
+    color: white;
+}
+
+button.btn.btn-outline {
+    color: #e67c8c;
+    border-color: #e67c8c
+}
+
+button.btn.btn-outline:hover {
+    color: white;
+    border-color: #e67c8c;
+    background-color: #f5a9b5;
+}
