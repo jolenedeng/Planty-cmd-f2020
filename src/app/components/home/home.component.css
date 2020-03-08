@@ -17,3 +17,10 @@
 .home-description {
     padding: 0 10rem 3rem 10rem;
 }
+
+.text-container {
+  background-image: url('https://i.pinimg.com/564x/0b/d9/09/0bd909cd28f4bd83139b3df8c3ccfde9.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
