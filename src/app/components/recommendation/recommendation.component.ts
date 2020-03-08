@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import {} from "googlemaps";
-import {LocationService} from './location.service';
-
+import { LocationService } from 'src/app/services/location.service';
 
 @Component({
     selector: 'recommendation',
