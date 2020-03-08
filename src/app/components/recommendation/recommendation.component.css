@@ -14,6 +14,7 @@
 .recommendation-header-text {
     font-size: 2rem;
     color: black;
+    text-transform: capitalize;
 }
 
 .recommendation-description {
