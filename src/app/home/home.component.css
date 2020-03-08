@@ -1,0 +1,17 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-title {
+    font-size: 50px;
+    padding-bottom: 2rem;
+    font-weight: 900;
+}
+
+.home-description {
+    padding: 0 20rem 3rem 20rem;
+}

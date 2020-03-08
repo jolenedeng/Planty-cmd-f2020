@@ -1,22 +1,22 @@
 <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.min.css" />
 <div class="clarity-wrapper">
-  <header class="header header-6">
-    <div class="branding">
-      <span class="title">Plant App</span>
-    </div>
-    <div class="header-nav">
-      <a class="nav-link"><span class="nav-text" routerLink="home">Home</span></a>
-      <a class="nav-link"><span class="nav-text" routerLink="recommendation">Recommendation</span></a>
-      <a class="nav-link"><span class="nav-text" routerLink="identify">Identify Plants</span></a>
-    </div>
-    <div class="header-actions">
-      <a class="nav-link nav-icon" routerLink="garden" aria-label="garden">
-        <clr-icon shape="sun"></clr-icon>
-      </a>
-      <a class="nav-link nav-icon" routerLink="favorites" aria-label="favorites">
-        <clr-icon shape="heart"></clr-icon>
-      </a>
-    </div>
-  </header>
+    <header class="header">
+        <div class="branding">
+            <span class="title">Plant App</span>
+        </div>
+        <div class="header-nav">
+            <a class="nav-link" routerLink="home" routerLinkActive="active"><span class="nav-text">Home</span></a>
+            <a class="nav-link" routerLink="recommendation" routerLinkActive="active"><span class="nav-text">Recommendation</span></a>
+            <a class="nav-link" routerLink="identify" routerLinkActive="active"><span class="nav-text">Identify Plants</span></a>
+        </div>
+        <div class="header-actions">
+            <a class="nav-link nav-icon" routerLink="garden" aria-label="garden" routerLinkActive="active">
+                <clr-icon shape="sun"></clr-icon>
+            </a>
+            <a class="nav-link nav-icon" routerLink="favorites" aria-label="favorites" routerLinkActive="active">
+                <clr-icon shape="heart"></clr-icon>
+            </a>
+        </div>
+    </header>
 </div>
 <router-outlet></router-outlet>
