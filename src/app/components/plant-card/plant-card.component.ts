@@ -33,7 +33,7 @@ export class PlantCardComponent implements OnInit {
       );
     } else {
       // Retrieve images from google api if we don't have them
-      this.plantImageSrc$ = this._plantImageSerivce.getPlantImageForPlant(this._plant.commonName, this._plant).pipe(
+      this.plantImageSrc$ = this._plantImageService.getPlantImageForPlant(this._plant.commonName, this._plant).pipe(
         map((images: string[]) => images[0])
       );
     }
@@ -47,7 +47,7 @@ export class PlantCardComponent implements OnInit {
 
   public plantImageSrc$: Observable<string>;
 
-  constructor(private _plantImageSerivce: PlantImageService,
+  constructor(private _plantImageService: PlantImageService,
     private _router: Router) { }
 
   ngOnInit(): void {
