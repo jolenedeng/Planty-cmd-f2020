@@ -23,6 +23,7 @@ export class PlantImageService {
                     if (!isPresent(plant.imageUrls)) {
                         plant.imageUrls = items;
                         localStorage.setItem(plant.scientificName, JSON.stringify(plant));
+                        return items;
                     }
                 }
                 return [];

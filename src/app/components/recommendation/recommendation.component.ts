@@ -18,8 +18,6 @@ import { tap } from "rxjs/operators"
 export class RecommendationComponent {
   public plants$: Observable<Plant[]>;
 
-  public savedPlants: Plant[];
-
   public currentState: string;
 
   constructor(private locationService: LocationService,
@@ -56,8 +54,6 @@ export class RecommendationComponent {
   }
 
   public getPlants(): void {
-    this.plants$ = this.plantService.getNativePlants(this.currentState).pipe(
-      tap((plants: Plant[]) => this.savedPlants = plants)
-    );
+    this.plants$ = this.plantService.getNativePlants(this.currentState);
   }
 }

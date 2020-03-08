@@ -4,20 +4,14 @@
     </div>
     <div class="plant-details-container">
         <div class="image-container">
-            <!-- <img [src]="plant.imageUrls[0]"> -->
-            <img class="main-image" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+            <img class="main-image" [src]="selectedImage">
             <div class="image-menu-selector">
-                <!-- <div *ngFor="let imageUrl of plant.imageUrls">
-                    <img *ngFor="let imageUrl of plant.imageUrls" [src]="imageUrl">
-                </div> -->
-                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
-                <img class="image-icon" src="https://images.pexels.com/photos/1048035/pexels-photo-1048035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+                <div *ngFor="let imageUrl of plant.imageUrls">
+                    <img class=" image-icon " [src]="imageUrl" (click)="selectImage(imageUrl)">
+                </div>
             </div>
         </div>
-        <div class="details-container ">
+        <div class=" details-container ">
             <div class="plant-body ">
                 <div class="plant-detail scientific-name ">
                     <span><clr-icon shape="dna "></clr-icon> Scientific name: </span><span>{{plant.scientificName}}</span>

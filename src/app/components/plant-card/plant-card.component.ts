@@ -19,15 +19,21 @@ export class PlantCardComponent implements OnInit {
    * Plant to show summary for.
    */
   @Input() public set plant(plant: Plant) {
-    this._plant = plant;
+    // Get item from local storage if it exists
+    const savedPlant: Plant = JSON.parse(localStorage.getItem(plant.scientificName));
+
+    if (isPresent(savedPlant)) {
+      this._plant = savedPlant;
+    } else this._plant = plant;
+
     // Retrieve images from stored data if we already queried them
-    if (isPresent(plant.imageUrls)) {
-      this.plantImageSrc$ = of(plant.imageUrls).pipe(
+    if (isPresent(this._plant.imageUrls)) {
+      this.plantImageSrc$ = of(this._plant.imageUrls).pipe(
         map((images: string[]) => images[0])
       );
     } else {
       // Retrieve images from google api if we don't have them
-      this.plantImageSrc$ = this._plantImageSerivce.getPlantImageForPlant(plant.commonName, plant).pipe(
+      this.plantImageSrc$ = this._plantImageSerivce.getPlantImageForPlant(this._plant.commonName, this._plant).pipe(
         map((images: string[]) => images[0])
       );
     }

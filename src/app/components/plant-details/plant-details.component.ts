@@ -16,6 +16,8 @@ import { isPresent } from 'src/app/commonFunctions';
 export class PlantDetailsComponent implements OnInit {
   public plant$: Observable<Plant>;
 
+  public selectedImage: string;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -23,10 +25,16 @@ export class PlantDetailsComponent implements OnInit {
       map((params: any) => {
         return JSON.parse(localStorage.getItem(params['id']));
       })
-    )
+    );
+
+    this.plant$.subscribe((plant: Plant) => this.selectedImage = plant.imageUrls[0]);
   }
 
   public hasAdaptableSoilTypes(plant: Plant): boolean {
     return isPresent(plant.isAdaptedToCoarseSoil) || isPresent(plant.isAdaptedToFineSoil) || isPresent(plant.isAdaptedToMediumSoil);
+  }
+
+  public selectImage(url: string): void {
+    this.selectedImage = url;
   }
 }

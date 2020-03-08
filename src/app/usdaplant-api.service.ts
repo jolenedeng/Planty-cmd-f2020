@@ -4,6 +4,7 @@ import { Plant } from './plant';
 import { Observable } from 'rxjs';
 import { map, tap, switchMap } from 'rxjs/operators';
 import { PlantImageService } from './services/plant-image.service';
+import { isPresent } from './commonFunctions';
 
 @Injectable({
   providedIn: 'root'
@@ -41,10 +42,13 @@ export class USDAPlantApiService {
 
     return this.plants.pipe(
       map(plants => plants.filter(plant => this.isLocationValid(location, plant.provinceState))
-        .slice(0, 2)),
-      tap((plants: Plant[]) => {
-        plants.forEach((plant: Plant) => localStorage.setItem(plant.scientificName, JSON.stringify(plant)));
-      }),
+        .slice(0, 15)),
+      tap((plants: Plant[]) => 
+        plants.forEach((plant: Plant) => {
+          if (!isPresent(localStorage.getItem(plant.scientificName))) {
+            localStorage.setItem(plant.scientificName, JSON.stringify(plant));
+          }
+        })),
       map((plants: Plant[]) => plants)
     );
   }

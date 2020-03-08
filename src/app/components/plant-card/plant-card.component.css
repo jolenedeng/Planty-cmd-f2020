@@ -7,3 +7,13 @@
     font-weight: bold;
     text-transform: capitalize;
 }
+
+.card-img {
+    display: flex;
+    justify-content: center;
+}
+
+.card-img img {
+    width: 20rem;
+    height: 20rem;
+}
