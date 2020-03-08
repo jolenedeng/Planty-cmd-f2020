@@ -18,7 +18,7 @@ import { RecommendationComponent } from './components/recommendation/recommendat
     HttpClientModule,
     AppRoutingModule,
     ClarityModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   declarations: [
     AppComponent,
