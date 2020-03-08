@@ -1,3 +1,22 @@
-<div>
-    recommendation page works
+<div class="clarity-wrapper recommendation-container">
+    <div class="recommendation-header">
+        <p class="recommendation-header-text">
+            Plant recommendations
+        </p>
+        <p class="recommendation-description">
+            Let us recommend some plants that are perfect for your climate.
+        </p>
+    </div>
+    <div class="search-container">
+        Insert search component
+        <button class="btn">Find results</button>
+    </div>
+    <div class="plant-cards-container">
+        <!-- <div class="plant-card" *ngFor="let plant of plants">
+            <app-plant-card [plant]=plant></app-plant-card>
+        </div> -->
+        <app-plant-card></app-plant-card>
+        <app-plant-card></app-plant-card>
+        <app-plant-card></app-plant-card>
+    </div>
 </div>
