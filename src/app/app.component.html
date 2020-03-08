@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.min.css" />
 <div class="clarity-wrapper">
     <header class="header">
-        <div class="branding">
-            <span class="title">Planty <img src='planty.png'></span>
-        </div>
+      <div class="branding-container logo-container">
+        <span class="title">Planty <img [src]="'planty.png'" alt="logo" width="35" height="35"></span>
+      </div>
         <div class="header-nav">
             <a class="nav-link" routerLink="home" routerLinkActive="active"><span class="nav-text">Home</span></a>
             <a class="nav-link" routerLink="recommendation" routerLinkActive="active"><span class="nav-text">Recommendation</span></a>

@@ -2,6 +2,15 @@
     background-color: #b6d9bc;
 }
 
-.header .branding .title {
-    font-size: x-large;
+.branding-container.logo-container {
+  display: flex;
+}
+
+.header .branding-container .title {
+  font-size: x-large;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.logo-container {
 }
