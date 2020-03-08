@@ -1,23 +1,27 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { map, switchMap } from "rxjs/operators";
+import { TREFLE_ACCESS_TOKEN } from '.secret';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PlantImageService {
     constructor(private http: HttpClient) {
-
+        
     }
 
     public getPlantImage(searchQuery: string): Observable<string> {
-        return this.http.get(`https://serpapi.com/playground?q=${searchQuery}&tbm=isch`).pipe(
+        return this.http.get(`https://trefle.io/api/plants?complete_data=true&token=${TREFLE_ACCESS_TOKEN}&q=${searchQuery}`).pipe(
+            switchMap((json: any[]) => {
+                console.log(json);
+                return this.http.get(`https://trefle.io/api/plants?#${json[0].id}&token=${TREFLE_ACCESS_TOKEN}`);
+            }),
             map((json: any) => {
                 console.log(json);
-                return JSON.parse(json);
+                return json;
             })
         )
-
     }
 }
