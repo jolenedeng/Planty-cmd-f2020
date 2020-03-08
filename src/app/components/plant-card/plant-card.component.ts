@@ -18,7 +18,7 @@ export class PlantCardComponent implements OnInit {
    */
   @Input() public set plant(plant: Plant) {
     this._plant = plant;
-    // this.plantImageSrc$ = this._plantImageSerivce.getPlantImage(plant.commonName);
+    this.plantImageSrc$ = this._plantImageSerivce.getPlantImage(plant.commonName);
   }
 
   private _plant: Plant;
