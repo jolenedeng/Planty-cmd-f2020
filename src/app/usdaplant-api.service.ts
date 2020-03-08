@@ -37,8 +37,7 @@ export class USDAPlantApiService {
     );
 
     this.plants.subscribe(plants => console.log(plants));
-    // filter based on location and return the first 3 results
- 
+    // filter based on location and return the first 40 results
     return this.plants.pipe(
       map(plants => plants.filter(plant => this.isLocationValid(location, plant.provinceState))
         .slice(0, 40)),
