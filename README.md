@@ -1,5 +1,5 @@
 
-# Planty 🌱✨
+# Planty (3rd place winner!) 🌱✨
 
 <img align="left" src="https://user-images.githubusercontent.com/32408688/76169469-bc633280-6135-11ea-9ee7-4daad3091eb9.png" width="100" height="100" />
 
